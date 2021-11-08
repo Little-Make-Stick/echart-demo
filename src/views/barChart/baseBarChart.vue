@@ -1,27 +1,70 @@
 <template>
-    <div class="contain">
-        <div class="echary-demo" ref="echartDemo">
-            
-        </div>
+    <div class="base-barchart-contain" ref="baseBarChart" style="width: 100%;">
+        <div class="title" style="line-height: 5vh;">baseBarChart</div>
+        <div class="echart-demo" ref="echartDemo" style="width: 100%;"></div>
     </div>
 </template>
 <script>
-var echarts = require('echart')
-    export default{
-        data(){
-            return{}
+    import * as echarts from 'echarts';
+    export default {
+        data() {
+            return {
+                myChart: null,
+                option: {
+                    xAxis: {
+                        type: 'category',
+                        data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
+                    },
+                    title: {
+                        text: 'Base Bar EChart Example'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['2015','2016','2017']
+                    },
+                    yAxis: {},
+                    series: [
+                        {
+                            type: 'bar',
+                            name: '2015',
+                            data: [89.3, 92.1, 94.4, 85.4]
+                        },
+                        {
+                            type: 'bar',
+                            name: '2016',
+                            data: [95.8, 89.4, 91.2, 76.9]
+                        },
+                        {
+                            type: 'bar',
+                            name: '2017',
+                            data: [97.7, 83.1, 92.5, 78.1]
+                        }
+                    ]
+                }
+            }
         },
-        watch:{},
-        computed:{},
-        created(){
-            var myChart = echarts.init(this.$refs.echartDemo);
-            window.onresize = function() {
-                myChart.resize();
-            };
+        watch: {
         },
-        mounted(){},
-        methods:{},
+        computed: {},
+        created() {
+        },
+        mounted() {
+            this.myChart = echarts.init(this.$refs.echartDemo, null, {
+                height: 400
+            });
+            this.$nextTick(function () {
+                this.draw();
+            })
+            // window.onresize = myChart.resize;
+            window.onresize = () => this.myChart.resize();
+
+        },
+        methods: {
+            draw() {
+                // 绘制图表
+                this.myChart.setOption(this.option);
+            }
+        },
     }
 </script>
-<style scope>
-</style>
+<style scope></style>

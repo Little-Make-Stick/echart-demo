@@ -1,41 +1,29 @@
 <template>
   <div class="home">
-    <el-container style="height: 500px; border: 1px solid #eee">
-      <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-        <el-menu route :collapse="isCollapse">
+    <el-container style="height: 100vh; border: 1px solid #eee;">
+      <el-aside width="200px" style="background-color: rgb(238, 241, 246);text-align: left;">
+        <el-menu  router :default-active="$route.path" :collapse="isCollapse">
           <el-submenu index="1">
             <template slot="title" ><i class="el-icon-message"></i>Bar Chart</template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-            </el-menu-item-group>
+            <el-menu-item index="/barchart/base">Basic</el-menu-item>
           </el-submenu>
           <el-submenu index="2">
             <template slot="title" ><i class="el-icon-message"></i>Line Chart</template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-            </el-menu-item-group>
+            <el-menu-item index="/linechart/base">Basic</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title" ><i class="el-icon-message"></i>Pie Chart</template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-            </el-menu-item-group>
+            <el-menu-item index="/piechart/base">Basic</el-menu-item>
           </el-submenu>
           <el-submenu index="4">
             <template slot="title" ><i class="el-icon-message"></i>Scatter Chart</template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-            </el-menu-item-group>
+            <el-menu-item index="/scatterchart/base">Basic</el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>
 
       <el-container>
-        <el-header style="text-align: right; font-size: 12px">
+        <el-header style="text-align: right; font-size: 12px;background: rgb(238, 241, 246);display: flex;align-items: center;justify-content: end;">
           <el-dropdown>
             <i class="el-icon-setting" style="margin-right: 15px"></i>
             <el-dropdown-menu slot="dropdown">
@@ -44,10 +32,11 @@
               <el-dropdown-item>删除</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <span>王小虎</span>
+          <span>xxx</span>
         </el-header>
 
         <el-main>
+            <router-view :key="$route.path"></router-view>
         </el-main>
       </el-container>
     </el-container>
