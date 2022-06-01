@@ -1,5 +1,6 @@
 <template>
     <div class="base-piechart-contain" ref="basePieChart" style="width: 100%">
+        <!-- 饼图--基本语法 -->
         <div class="title">basePieChart</div>
         <div class="echart-demo" ref="echartDemo" style="width: 100%"></div>
     </div>
@@ -56,7 +57,9 @@
             this.$nextTick(function () {
                 this.draw();
             });
-            window.onresize = () => this.myChart.resize();
+            // 窗口尺寸改变时自动重绘图表
+            window.onresize = this.myChart.resize;
+            // window.onresize = () => this.myChart.resize();
         },
         methods: {
             draw() {

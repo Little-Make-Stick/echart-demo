@@ -1,5 +1,6 @@
 <template>
     <div class="base-linechart-contain" ref="baseLineChart" style="width: 100%">
+        <!-- 折线图--基本语法 -->
         <div class="title" >baseLineChart</div>
         <div class="echart-demo" ref="echartDemo" style="width: 100%"></div>
     </div>
@@ -15,6 +16,7 @@
                         text: 'Base Line EChart Example'
                     },
                     tooltip: {},
+                    color: [],
                     legend: {
                         data: ['value']
                     },
@@ -22,7 +24,10 @@
                         type: "category",
                         data: ['A', 'B', 'C', 'D', 'E']
                     },
-                    yAxis: {},
+                    yAxis: {
+                        type: "value",
+                        data: []
+                    },
                     series: [
                         {
                             data: [10, 22, 28, 23, 19],
@@ -50,7 +55,9 @@
             this.$nextTick(function () {
                 this.draw();
             });
-            window.onresize = () => this.myChart.resize();
+            // 窗口尺寸改变时自动重绘图表
+            window.onresize = this.myChart.resize;
+            // window.onresize = () => this.myChart.resize();
         },
         methods: {
             draw() {

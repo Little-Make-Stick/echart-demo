@@ -64,6 +64,10 @@ export default {
                             index: '/barchart/base',
                             title: '基础语法',
                         },
+                        {
+                            index: '/barchart/package',
+                            title: '封装用法',
+                        },
                     ],
                 },
                 {
@@ -74,6 +78,10 @@ export default {
                         {
                             index: '/linechart/base',
                             title: '基础语法',
+                        },
+                        {
+                            index: '/linechart/package',
+                            title: '封装用法',
                         },
                     ],
                 },
@@ -86,6 +94,10 @@ export default {
                             index: '/piechart/base',
                             title: '基础语法',
                         },
+                        {
+                            index: '/piechart/package',
+                            title: '封装用法',
+                        },
                     ],
                 },
                 {
@@ -96,6 +108,10 @@ export default {
                         {
                             index: '/scatterchart/base',
                             title: '基础语法',
+                        },
+                        {
+                            index: '/scatterchart/package',
+                            title: '封装用法',
                         },
                     ],
                 },

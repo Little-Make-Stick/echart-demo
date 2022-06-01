@@ -1,5 +1,6 @@
 <template>
     <div class="base-barchart-contain" ref="baseBarChart" style="width: 100%;">
+        <!-- 柱状图--基本语法 -->
         <div class="title" style="line-height: 5vh;">baseBarChart</div>
         <div class="echart-demo" ref="echartDemo" style="width: 100%;"></div>
     </div>
@@ -55,8 +56,9 @@
             this.$nextTick(function () {
                 this.draw();
             })
-            // window.onresize = myChart.resize;
-            window.onresize = () => this.myChart.resize();
+            // 窗口尺寸改变时自动重绘图表
+            window.onresize = this.myChart.resize;
+            // window.onresize = () => this.myChart.resize();
 
         },
         methods: {
