@@ -11,6 +11,13 @@
             return {
                 myChart: null,
                 option: {
+                    title: {
+                        text: 'Base Line EChart Example'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['value']
+                    },
                     xAxis: {
                         type: "category",
                         data: ['A', 'B', 'C', 'D', 'E']
@@ -20,6 +27,7 @@
                         {
                             data: [10, 22, 28, 23, 19],
                             type: "line",
+                            name: 'value',
                             label: {
                                 show: true,
                                 position: "bottom",

@@ -11,16 +11,16 @@
             return {
                 myChart: null,
                 option: {
-                    xAxis: {
-                        type: 'category',
-                        data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
-                    },
                     title: {
                         text: 'Base Bar EChart Example'
                     },
                     tooltip: {},
                     legend: {
                         data: ['2015','2016','2017']
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
                     },
                     yAxis: {},
                     series: [

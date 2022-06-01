@@ -11,7 +11,17 @@
             return {
                 myChart: null,
                 option: {
-                    // xAxis: {},
+                    title: {
+                        text: 'Base Pie EChart Example'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['直接访问','联盟广告','搜索引擎']
+                    },
+                    // xAxis: {
+                    //     type: 'category',
+                    //     data: []
+                    // },
                     // yAxis: {},
                     series: [
                         {
